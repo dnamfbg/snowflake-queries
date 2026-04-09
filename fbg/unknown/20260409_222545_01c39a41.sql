@@ -1,9 +1,0 @@
--- Query ID: 01c39a41-0212-6cb9-24dd-070319435de7
--- Database: unknown
--- Schema: unknown
--- Warehouse: BI_XSM_WH
--- Executed: 2026-04-09T22:25:45.014000+00:00
--- Elapsed: 359ms
--- Environment: FBG
-
-SELECT CASE_STATUS, COUNT(*) AS CNT FROM FBG_ANALYTICS.OPERATIONS.CS_CASES GROUP BY CASE_STATUS ORDER BY CNT DESC LIMIT 20

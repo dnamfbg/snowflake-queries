@@ -1,9 +1,0 @@
--- Query ID: 01c399f2-0212-6dbe-24dd-070319310943
--- Database: unknown
--- Schema: unknown
--- Warehouse: TRADING_XL_WH
--- Executed: 2026-04-09T21:06:24.046000+00:00
--- Elapsed: 409ms
--- Environment: FBG
-
-SELECT DISTINCT BET_TYPE FROM FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.BETS_BY_PAGE LIMIT 20

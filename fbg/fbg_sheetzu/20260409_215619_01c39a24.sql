@@ -1,9 +1,0 @@
--- Query ID: 01c39a24-0212-6e7d-24dd-0703193cc98f
--- Database: FBG_SHEETZU
--- Schema: unknown
--- Warehouse: BI_M_WH
--- Executed: 2026-04-09T21:56:19.887000+00:00
--- Elapsed: 1167ms
--- Environment: FBG
-
-SELECT TYPE FROM "FBG_SHEETZU".INFORMATION_SCHEMA.DATABASES WHERE DATABASE_NAME = 'FBG_SHEETZU'

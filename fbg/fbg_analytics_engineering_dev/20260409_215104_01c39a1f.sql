@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS_ENGINEERING_DEV
 -- Schema: TRADING
 -- Warehouse: TRADING_XL_WH
--- Executed: 2026-04-09T21:51:04.777000+00:00
+-- Last Executed: 2026-04-09T21:51:04.777000+00:00
 -- Elapsed: 1342825ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT * FROM ( ( WITH

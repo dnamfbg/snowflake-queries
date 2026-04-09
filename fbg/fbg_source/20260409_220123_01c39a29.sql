@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: unknown
 -- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:01:23.013000+00:00
+-- Last Executed: 2026-04-09T22:01:23.013000+00:00
 -- Elapsed: 124469ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."CASINO_ACTIVES" AS "CASINO_ACTIVES",

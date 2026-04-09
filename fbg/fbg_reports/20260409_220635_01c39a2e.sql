@@ -1,9 +1,0 @@
--- Query ID: 01c39a2e-0212-6dbe-24dd-0703193f6457
--- Database: FBG_REPORTS
--- Schema: unknown
--- Warehouse: BI_XL_WH
--- Executed: 2026-04-09T22:06:35.444000+00:00
--- Elapsed: 526ms
--- Environment: FBG
-
-SELECT TYPE FROM "FBG_REPORTS".INFORMATION_SCHEMA.DATABASES WHERE DATABASE_NAME = 'FBG_REPORTS'

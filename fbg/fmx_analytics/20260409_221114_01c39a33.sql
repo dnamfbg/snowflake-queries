@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:11:14.834000+00:00
+-- Last Executed: 2026-04-09T22:11:14.834000+00:00
 -- Elapsed: 1868ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.CUSTOMER.fct_fmx_withdrawal_failures_daily

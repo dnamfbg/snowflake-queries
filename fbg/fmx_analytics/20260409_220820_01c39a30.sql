@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:08:20.044000+00:00
+-- Last Executed: 2026-04-09T22:08:20.044000+00:00
 -- Elapsed: 1715ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.STAGING.stg_sigma_manual_marketing_spend

@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: SNOWFLAKE_INTELLIGENCE_WH
--- Executed: 2026-04-09T22:41:38.508000+00:00
+-- Last Executed: 2026-04-09T22:41:38.508000+00:00
 -- Elapsed: 11417ms
+-- Run Count: 2
 -- Environment: FES
 
 WITH loyalty_tier AS (

@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: BI_L_WH
--- Executed: 2026-04-09T22:16:45.665000+00:00
+-- Last Executed: 2026-04-09T22:16:45.665000+00:00
 -- Elapsed: 880ms
+-- Run Count: 11
 -- Environment: FBG
 
 SELECT * FROM FBG_ANALYTICS.TRADING.LIVE_CM_HOURLY

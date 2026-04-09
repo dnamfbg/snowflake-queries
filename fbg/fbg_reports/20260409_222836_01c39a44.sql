@@ -2,8 +2,9 @@
 -- Database: FBG_REPORTS
 -- Schema: unknown
 -- Warehouse: BI_XL_WH
--- Executed: 2026-04-09T22:28:36.148000+00:00
+-- Last Executed: 2026-04-09T22:28:36.148000+00:00
 -- Elapsed: 138ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query3"."DETAILED_GAME_TYPE" AS "DETAILED_GAME_TYPE",

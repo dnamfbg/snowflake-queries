@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: FDE_FES_ANALYST_XL_WH
--- Executed: 2026-04-09T20:52:55.176000+00:00
+-- Last Executed: 2026-04-09T20:52:55.176000+00:00
 -- Elapsed: 3094ms
+-- Run Count: 2
 -- Environment: FES
 
 with fanapp_users as (

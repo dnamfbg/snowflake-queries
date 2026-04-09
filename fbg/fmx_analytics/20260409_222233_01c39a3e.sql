@@ -1,9 +1,10 @@
--- Query ID: 01c39a3e-0212-6e7d-24dd-07031942e90f
+-- Query ID: 01c39a3e-0212-6cb9-24dd-07031942f5eb
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:22:33.174000+00:00
--- Elapsed: 1844ms
+-- Last Executed: 2026-04-09T22:22:33.174000+00:00
+-- Elapsed: 538ms
+-- Run Count: 2
 -- Environment: FBG
 
 select
@@ -19,9 +20,9 @@ select
 
 
 
-select report_date
+select metric
 from FMX_ANALYTICS.CUSTOMER.vw_fmx_revenue_pivot
-where report_date is null
+where metric is null
 
 
 
@@ -29,4 +30,4 @@ where report_date is null
   
       
     ) dbt_internal_test
-/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.dbt_fmx.not_null_vw_fmx_revenue_pivot_report_date.ab56dbad2d", "profile_name": "user", "target_name": "default"} */
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.dbt_fmx.not_null_vw_fmx_revenue_pivot_metric.169d28a140", "profile_name": "user", "target_name": "default"} */

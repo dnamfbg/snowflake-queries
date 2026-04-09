@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS
 -- Schema: unknown
 -- Warehouse: BI_XSM_WH
--- Executed: 2026-04-09T22:01:23.955000+00:00
+-- Last Executed: 2026-04-09T22:01:23.955000+00:00
 -- Elapsed: 233595ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."ACCOUNT_ID" AS "ACCOUNT_ID",

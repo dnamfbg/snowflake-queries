@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: BI_SER_XL_WH
--- Executed: 2026-04-09T21:58:59.906000+00:00
+-- Last Executed: 2026-04-09T21:58:59.906000+00:00
 -- Elapsed: 799ms
+-- Run Count: 2
 -- Environment: FBG
 
 WITH 

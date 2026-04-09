@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:19:12.095000+00:00
+-- Last Executed: 2026-04-09T22:19:12.095000+00:00
 -- Elapsed: 5568ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.CUSTOMER.int_fmx_acquisition_customer

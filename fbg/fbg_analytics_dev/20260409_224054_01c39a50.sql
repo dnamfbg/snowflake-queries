@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS_DEV
 -- Schema: DANIEL_RUSTICO
 -- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:40:54.731000+00:00
+-- Last Executed: 2026-04-09T22:40:54.731000+00:00
 -- Elapsed: 5256ms
+-- Run Count: 3
 -- Environment: FBG
 
 INSERT INTO FBG_ANALYTICS_DEV.DANIEL_RUSTICO.big_deposit_alert_100k (

@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: unknown
 -- Warehouse: TABLEAU_XL_PROD
--- Executed: 2026-04-09T22:41:10.722000+00:00
+-- Last Executed: 2026-04-09T22:41:10.722000+00:00
 -- Elapsed: 206332ms
+-- Run Count: 3
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."AVC" AS "AVC",

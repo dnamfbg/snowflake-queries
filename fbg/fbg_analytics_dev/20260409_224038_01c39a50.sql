@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS_DEV
 -- Schema: DANIEL_RUSTICO
 -- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:40:38.459000+00:00
+-- Last Executed: 2026-04-09T22:40:38.459000+00:00
 -- Elapsed: 13671ms
+-- Run Count: 7
 -- Environment: FBG
 
 CREATE OR REPLACE TEMPORARY TABLE vip_host AS(

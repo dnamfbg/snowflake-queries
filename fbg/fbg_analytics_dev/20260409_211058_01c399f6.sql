@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS_DEV
 -- Schema: GHIBRIAN_AVILA
 -- Warehouse: BI_L_WH
--- Executed: 2026-04-09T21:10:58.088000+00:00
+-- Last Executed: 2026-04-09T21:10:58.088000+00:00
 -- Elapsed: 2763ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT

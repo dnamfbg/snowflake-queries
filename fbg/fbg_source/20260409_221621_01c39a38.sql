@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: PUBLIC
 -- Warehouse: TABLEAU_INTRADAY_EXEC_SUMMARY_L_WH
--- Executed: 2026-04-09T22:16:21.311000+00:00
+-- Last Executed: 2026-04-09T22:16:21.311000+00:00
 -- Elapsed: 10453ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."ACCOUNT_ID" AS "ACCOUNT_ID",

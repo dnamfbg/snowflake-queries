@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS
 -- Schema: unknown
 -- Warehouse: STRATEGY_XL_WH
--- Executed: 2026-04-09T22:01:39.673000+00:00
+-- Last Executed: 2026-04-09T22:01:39.673000+00:00
 -- Elapsed: 346472ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."ACCO_ID" AS "ACCO_ID",

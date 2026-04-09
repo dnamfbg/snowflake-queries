@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: FDE_DEVELOPER_XL_WH
--- Executed: 2026-04-09T21:31:17.353000+00:00
+-- Last Executed: 2026-04-09T21:31:17.353000+00:00
 -- Elapsed: 1775ms
+-- Run Count: 2
 -- Environment: FES
 
 WITH last_success AS (                                                                                                  

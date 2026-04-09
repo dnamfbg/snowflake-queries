@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:15:29.347000+00:00
+-- Last Executed: 2026-04-09T22:15:29.347000+00:00
 -- Elapsed: 3490ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.CUSTOMER.cust_fmx_first_time_user_events

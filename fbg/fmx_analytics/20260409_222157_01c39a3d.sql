@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:21:57.086000+00:00
+-- Last Executed: 2026-04-09T22:21:57.086000+00:00
 -- Elapsed: 3511ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.STAGING.fct_fmx_crm_campaign_daily_summary

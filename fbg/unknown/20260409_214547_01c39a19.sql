@@ -1,9 +1,0 @@
--- Query ID: 01c39a19-0212-6b00-24dd-0703193ac557
--- Database: unknown
--- Schema: unknown
--- Warehouse: BI_XSM_WH
--- Executed: 2026-04-09T21:45:47.271000+00:00
--- Elapsed: 10452ms
--- Environment: FBG
-
-SELECT * FROM FBG_ANALYTICS_ENGINEERING_DEV.INTERNAL.REGULATORY_TRANSACTIONS_MART_TEST

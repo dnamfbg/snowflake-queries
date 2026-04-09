@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: unknown
 -- Warehouse: BI_XL_WH
--- Executed: 2026-04-09T21:01:58.180000+00:00
+-- Last Executed: 2026-04-09T21:01:58.180000+00:00
 -- Elapsed: 174ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."Gaming Date" AS "Gaming Date",

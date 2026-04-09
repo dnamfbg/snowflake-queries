@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:08:16.240000+00:00
+-- Last Executed: 2026-04-09T22:08:16.240000+00:00
 -- Elapsed: 380ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace   view FMX_ANALYTICS.STAGING.stg_fmx_mm_fix_messages

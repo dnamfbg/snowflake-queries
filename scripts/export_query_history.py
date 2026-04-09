@@ -39,6 +39,7 @@ FROM TABLE(INFORMATION_SCHEMA.QUERY_HISTORY(
 ))
 WHERE EXECUTION_STATUS = 'SUCCESS'
   AND QUERY_TYPE IN ('SELECT', 'CREATE_TABLE_AS_SELECT', 'INSERT', 'MERGE', 'UPDATE', 'DELETE', 'CREATE_TABLE', 'CREATE_VIEW')
+  AND (QUERY_TAG IS NULL OR QUERY_TAG = '')
 ORDER BY START_TIME DESC
 """
 
@@ -58,7 +59,7 @@ SKIP_PATTERNS = [
 def is_junk_query(query_text):
     """Filter out trivial/boilerplate queries."""
     text = query_text.strip()
-    if len(text) < 20:
+    if len(text) < 80:
         return True
     for pattern in SKIP_PATTERNS:
         if re.match(pattern, text, re.IGNORECASE):
@@ -110,27 +111,37 @@ def export_environment(env_name, config):
         conn.close()
         return
 
-    # Deduplicate by query text hash
-    seen_hashes = set()
-    unique_queries = []
+    # Count runs per unique query, keep only those run 3+ times
+    hash_counts = {}
+    hash_rows = {}
 
     for row in rows:
         query_id, query_text, db_name, schema_name, warehouse, start_time, status, elapsed = row
         if is_junk_query(query_text):
             continue
         query_hash = hashlib.md5(query_text.strip().encode()).hexdigest()
-        if query_hash in seen_hashes:
-            continue
-        seen_hashes.add(query_hash)
-        unique_queries.append({
-            "query_id": query_id,
-            "query_text": query_text.strip(),
-            "database": db_name or "unknown",
-            "schema": schema_name or "unknown",
-            "warehouse": warehouse,
-            "start_time": start_time,
-            "elapsed_ms": elapsed,
-        })
+        hash_counts[query_hash] = hash_counts.get(query_hash, 0) + 1
+        # Keep the most recent execution of each query
+        if query_hash not in hash_rows:
+            hash_rows[query_hash] = {
+                "query_id": query_id,
+                "query_text": query_text.strip(),
+                "database": db_name or "unknown",
+                "schema": schema_name or "unknown",
+                "warehouse": warehouse,
+                "start_time": start_time,
+                "elapsed_ms": elapsed,
+                "run_count": 0,
+            }
+
+    MIN_RUNS = 2
+    unique_queries = []
+    for qhash, data in hash_rows.items():
+        data["run_count"] = hash_counts[qhash]
+        if hash_counts[qhash] >= MIN_RUNS:
+            unique_queries.append(data)
+
+    print(f"Queries run {MIN_RUNS}+ times: {len(unique_queries)} (from {len(hash_rows)} unique).")
 
     print(f"After dedup and filtering: {len(unique_queries)} unique queries.")
 
@@ -150,8 +161,9 @@ def export_environment(env_name, config):
 -- Database: {q['database']}
 -- Schema: {q['schema']}
 -- Warehouse: {q['warehouse']}
--- Executed: {q['start_time'].isoformat()}
+-- Last Executed: {q['start_time'].isoformat()}
 -- Elapsed: {q['elapsed_ms']}ms
+-- Run Count: {q['run_count']}
 -- Environment: {env_name.upper()}
 
 """

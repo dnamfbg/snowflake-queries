@@ -1,9 +1,0 @@
--- Query ID: 01c399f4-0212-6cb9-24dd-07031931d20b
--- Database: unknown
--- Schema: unknown
--- Warehouse: TRADING_XL_WH
--- Executed: 2026-04-09T21:08:40.177000+00:00
--- Elapsed: 142ms
--- Environment: FBG
-
-SELECT DISTINCT REFERRAL_PATH FROM FBG_SOURCE.OSB_SOURCE.BETS WHERE REFERRAL_PATH IS NOT NULL LIMIT 30

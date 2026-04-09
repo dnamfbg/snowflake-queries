@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: OSB_SOURCE
 -- Warehouse: BI_SER_M_WH_PROD
--- Executed: 2026-04-09T20:50:27.048000+00:00
+-- Last Executed: 2026-04-09T20:50:27.048000+00:00
 -- Elapsed: 760ms
+-- Run Count: 19
 -- Environment: FBG
 
 WITH snowsight_transform_cte as (

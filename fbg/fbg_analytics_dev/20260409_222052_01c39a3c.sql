@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS_DEV
 -- Schema: DANIEL_RUSTICO
 -- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:20:52.551000+00:00
+-- Last Executed: 2026-04-09T22:20:52.551000+00:00
 -- Elapsed: 34539ms
+-- Run Count: 2
 -- Environment: FBG
 
 INSERT INTO FBG_ANALYTICS_DEV.DANIEL_RUSTICO.big_bet_alert_10k(

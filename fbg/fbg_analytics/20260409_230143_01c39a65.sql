@@ -1,0 +1,10 @@
+-- Query ID: 01c39a65-0212-6dbe-24dd-0703194b409b
+-- Database: FBG_ANALYTICS
+-- Schema: unknown
+-- Warehouse: BI_M_WH
+-- Last Executed: 2026-04-09T23:01:43.395000+00:00
+-- Elapsed: 797ms
+-- Run Count: 288
+-- Environment: FBG
+
+SELECT TYPE FROM "FBG_ANALYTICS".INFORMATION_SCHEMA.DATABASES WHERE DATABASE_NAME = 'FBG_ANALYTICS'

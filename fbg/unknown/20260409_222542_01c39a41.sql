@@ -1,9 +1,0 @@
--- Query ID: 01c39a41-0212-6cb9-24dd-070319435d9b
--- Database: unknown
--- Schema: unknown
--- Warehouse: BI_XSM_WH
--- Executed: 2026-04-09T22:25:42.872000+00:00
--- Elapsed: 1225ms
--- Environment: FBG
-
-SELECT LIFECYCLE, COUNT(*) AS CNT FROM FBG_ANALYTICS.OPERATIONS.CS_CASES GROUP BY LIFECYCLE ORDER BY CNT DESC LIMIT 20

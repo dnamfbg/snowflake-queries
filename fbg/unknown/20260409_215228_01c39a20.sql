@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: BI_XSM_WH
--- Executed: 2026-04-09T21:52:28.039000+00:00
+-- Last Executed: 2026-04-09T21:52:28.039000+00:00
 -- Elapsed: 73ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT * FROM FBG_ANALYTICS_ENGINEERING_DEV.FINANCE.FINANCE_TRANSACTIONS_MART_TEST where transaction_type like '%ADJUSTMENT%'

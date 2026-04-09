@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: OSB_SOURCE
 -- Warehouse: BI_L_WH
--- Executed: 2026-04-09T22:11:31.972000+00:00
+-- Last Executed: 2026-04-09T22:11:31.972000+00:00
 -- Elapsed: 6807ms
+-- Run Count: 2
 -- Environment: FBG
 
 With table1 as (

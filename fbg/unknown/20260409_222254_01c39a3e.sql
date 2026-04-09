@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: BI_XSM_WH
--- Executed: 2026-04-09T22:22:54.183000+00:00
+-- Last Executed: 2026-04-09T22:22:54.183000+00:00
 -- Elapsed: 10607ms
+-- Run Count: 2
 -- Environment: FBG
 
 WITH 

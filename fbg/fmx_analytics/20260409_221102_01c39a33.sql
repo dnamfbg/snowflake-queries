@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:11:02.320000+00:00
+-- Last Executed: 2026-04-09T22:11:02.320000+00:00
 -- Elapsed: 2300ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.CUSTOMER.fct_fmx_hourly_dashboard

@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:09:42.457000+00:00
+-- Last Executed: 2026-04-09T22:09:42.457000+00:00
 -- Elapsed: 1751ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.CUSTOMER.fct_vip_contact_history

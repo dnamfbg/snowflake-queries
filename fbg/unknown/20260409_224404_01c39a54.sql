@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: BI_XSM_WH
--- Executed: 2026-04-09T22:44:04.691000+00:00
+-- Last Executed: 2026-04-09T22:44:04.691000+00:00
 -- Elapsed: 31075ms
+-- Run Count: 4
 -- Environment: FBG
 
 WITH bonus_campaigns AS (

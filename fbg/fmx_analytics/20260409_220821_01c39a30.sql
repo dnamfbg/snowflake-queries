@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:08:21.057000+00:00
+-- Last Executed: 2026-04-09T22:08:21.057000+00:00
 -- Elapsed: 191494ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.CUSTOMER.fct_kalshi_market_labels

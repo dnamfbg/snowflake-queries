@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: BI_L_WH
--- Executed: 2026-04-09T22:05:18.283000+00:00
+-- Last Executed: 2026-04-09T22:05:18.283000+00:00
 -- Elapsed: 2973ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT 

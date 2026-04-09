@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: OSB_SOURCE
 -- Warehouse: BI_SER_XL_WH
--- Executed: 2026-04-09T22:39:38.446000+00:00
+-- Last Executed: 2026-04-09T22:39:38.446000+00:00
 -- Elapsed: 5217ms
+-- Run Count: 7
 -- Environment: FBG
 
 SELECT 

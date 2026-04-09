@@ -1,9 +1,0 @@
--- Query ID: 01c39a29-0212-6dbe-24dd-0703193dcfcf
--- Database: FBG_STITCH
--- Schema: unknown
--- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:01:03.180000+00:00
--- Elapsed: 577ms
--- Environment: FBG
-
-SELECT TYPE FROM "FBG_STITCH".INFORMATION_SCHEMA.DATABASES WHERE DATABASE_NAME = 'FBG_STITCH'

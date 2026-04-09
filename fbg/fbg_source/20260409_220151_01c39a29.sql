@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: unknown
 -- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:01:51.107000+00:00
+-- Last Executed: 2026-04-09T22:01:51.107000+00:00
 -- Elapsed: 42582ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."COUNT" AS "COUNT",

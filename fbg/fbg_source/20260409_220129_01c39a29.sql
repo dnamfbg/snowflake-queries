@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: unknown
 -- Warehouse: TABLEAU_M_PROD
--- Executed: 2026-04-09T22:01:29.175000+00:00
+-- Last Executed: 2026-04-09T22:01:29.175000+00:00
 -- Elapsed: 4248ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."ID" AS "ID",

@@ -2,8 +2,9 @@
 -- Database: FBG_GOVERNANCE
 -- Schema: unknown
 -- Warehouse: TABLEAU_M_PROD
--- Executed: 2026-04-09T22:46:52.547000+00:00
+-- Last Executed: 2026-04-09T22:46:52.547000+00:00
 -- Elapsed: 3271ms
+-- Run Count: 3
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."ACCOUNT_AGE_DAYS" AS "ACCOUNT_AGE_DAYS",

@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS_ENGINEERING
 -- Schema: unknown
 -- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:01:59.220000+00:00
+-- Last Executed: 2026-04-09T22:01:59.220000+00:00
 -- Elapsed: 9361ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."CASES" AS "CASES",

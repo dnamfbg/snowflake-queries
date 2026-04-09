@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS
 -- Schema: unknown
 -- Warehouse: TABLEAU_XL_PROD
--- Executed: 2026-04-09T22:40:43.530000+00:00
+-- Last Executed: 2026-04-09T22:40:43.530000+00:00
 -- Elapsed: 191772ms
+-- Run Count: 7
 -- Environment: FBG
 
 SELECT 'Totals' AS "Calculation_6387019114511745027"

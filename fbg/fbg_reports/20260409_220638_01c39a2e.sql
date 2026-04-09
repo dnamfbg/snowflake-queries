@@ -2,8 +2,9 @@
 -- Database: FBG_REPORTS
 -- Schema: unknown
 -- Warehouse: BI_XL_WH
--- Executed: 2026-04-09T22:06:38.866000+00:00
+-- Last Executed: 2026-04-09T22:06:38.866000+00:00
 -- Elapsed: 47ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query4"."ACCO_ID" AS "ACCO_ID (Custom SQL Query4)",

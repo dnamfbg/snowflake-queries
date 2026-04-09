@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS
 -- Schema: unknown
 -- Warehouse: BI_SM_WH
--- Executed: 2026-04-09T22:02:17.479000+00:00
+-- Last Executed: 2026-04-09T22:02:17.479000+00:00
 -- Elapsed: 1275ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."AVG(CASE_TIME_MINUTES)" AS "AVG(CASE_TIME_MINUTES)",

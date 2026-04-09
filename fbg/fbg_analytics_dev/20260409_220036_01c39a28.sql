@@ -1,9 +1,0 @@
--- Query ID: 01c39a28-0212-6dbe-24dd-0703193dc7e7
--- Database: FBG_ANALYTICS_DEV
--- Schema: ALVIN_CHAI
--- Warehouse: BI_L_WH
--- Executed: 2026-04-09T22:00:36.731000+00:00
--- Elapsed: 2690ms
--- Environment: FBG
-
-SELECT * FROM TABLE(GET_QUERY_OPERATOR_STATS('01c39a11-0212-6dbe-24dd-07031938d133'))

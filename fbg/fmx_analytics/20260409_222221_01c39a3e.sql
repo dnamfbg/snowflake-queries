@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:22:21.070000+00:00
+-- Last Executed: 2026-04-09T22:22:21.070000+00:00
 -- Elapsed: 885ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace   view FMX_ANALYTICS.CUSTOMER.vw_fmx_kpi_pivot_new

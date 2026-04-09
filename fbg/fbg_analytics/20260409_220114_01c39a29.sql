@@ -2,8 +2,9 @@
 -- Database: FBG_ANALYTICS
 -- Schema: unknown
 -- Warehouse: BI_XL_WH
--- Executed: 2026-04-09T22:01:14.927000+00:00
+-- Last Executed: 2026-04-09T22:01:14.927000+00:00
 -- Elapsed: 49462ms
+-- Run Count: 2
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."ABANDONED_DAY" AS "ABANDONED_DAY",

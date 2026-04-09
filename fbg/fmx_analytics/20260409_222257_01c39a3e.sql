@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:22:57.071000+00:00
+-- Last Executed: 2026-04-09T22:22:57.071000+00:00
 -- Elapsed: 16533ms
+-- Run Count: 2
 -- Environment: FBG
 
 create or replace  table FMX_ANALYTICS.customer.cust_fmx_customer_daily_balance

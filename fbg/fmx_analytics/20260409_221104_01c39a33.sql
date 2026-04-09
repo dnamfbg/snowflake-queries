@@ -2,8 +2,9 @@
 -- Database: FMX_ANALYTICS
 -- Schema: STAGING
 -- Warehouse: BI_M_WH
--- Executed: 2026-04-09T22:11:04.817000+00:00
+-- Last Executed: 2026-04-09T22:11:04.817000+00:00
 -- Elapsed: 141ms
+-- Run Count: 2
 -- Environment: FBG
 
 select

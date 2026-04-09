@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: unknown
 -- Warehouse: BI_XL_WH
--- Executed: 2026-04-09T22:46:16.183000+00:00
+-- Last Executed: 2026-04-09T22:46:16.183000+00:00
 -- Elapsed: 8198ms
+-- Run Count: 3
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."ACCOUNT_ID" AS "ACCOUNT_ID",

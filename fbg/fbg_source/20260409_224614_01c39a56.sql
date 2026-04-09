@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: PUBLIC
 -- Warehouse: TABLEAU_INTRADAY_EXEC_SUMMARY_L_WH
--- Executed: 2026-04-09T22:46:14.746000+00:00
+-- Last Executed: 2026-04-09T22:46:14.746000+00:00
 -- Elapsed: 4988ms
+-- Run Count: 3
 -- Environment: FBG
 
 SELECT "Custom SQL Query"."DATE" AS "DATE",

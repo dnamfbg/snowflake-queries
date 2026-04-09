@@ -1,9 +1,0 @@
--- Query ID: 01c399f0-0212-644a-24dd-07031930e397
--- Database: unknown
--- Schema: unknown
--- Warehouse: TRADING_XL_WH
--- Executed: 2026-04-09T21:04:53.303000+00:00
--- Elapsed: 196ms
--- Environment: FBG
-
-SELECT BET_PLACED, BET_SELECTED, COUNT(*) AS cnt FROM FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.SEP_BET_SELECTIONS GROUP BY 1, 2 ORDER BY 1, 2

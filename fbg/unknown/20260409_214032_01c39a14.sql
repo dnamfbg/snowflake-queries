@@ -2,8 +2,9 @@
 -- Database: unknown
 -- Schema: unknown
 -- Warehouse: TRADING_L_WH
--- Executed: 2026-04-09T21:40:32.242000+00:00
+-- Last Executed: 2026-04-09T21:40:32.242000+00:00
 -- Elapsed: 8848ms
+-- Run Count: 3
 -- Environment: FBG
 
 WITH normalized_ AS (

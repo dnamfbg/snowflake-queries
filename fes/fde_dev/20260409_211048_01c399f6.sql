@@ -1,9 +1,0 @@
--- Query ID: 01c399f6-0112-6b51-0000-e307218afbd2
--- Database: FDE_DEV
--- Schema: FDE_STAGE
--- Warehouse: FDE_DEVELOPER_XL_WH
--- Executed: 2026-04-09T21:10:48+00:00
--- Elapsed: 1634ms
--- Environment: FES
-
-INSERT  INTO SNOWPARK_TEMP_TABLE_E9ELVPA52A("IDX", "NODES") VALUES (?, ?)

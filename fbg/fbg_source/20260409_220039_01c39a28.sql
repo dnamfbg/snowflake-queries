@@ -2,8 +2,9 @@
 -- Database: FBG_SOURCE
 -- Schema: OSB_SOURCE
 -- Warehouse: BI_L_WH
--- Executed: 2026-04-09T22:00:39.660000+00:00
+-- Last Executed: 2026-04-09T22:00:39.660000+00:00
 -- Elapsed: 13928ms
+-- Run Count: 4
 -- Environment: FBG
 
 with accepted_vip_bets as (
