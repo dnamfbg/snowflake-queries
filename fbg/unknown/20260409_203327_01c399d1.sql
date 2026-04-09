@@ -1,0 +1,11 @@
+-- Query ID: 01c399d1-0212-6e7d-24dd-07031929e84f
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: AE_SIGMA_PROD
+-- Executed: 2026-04-09T20:33:27.684000+00:00
+-- Elapsed: 1142ms
+-- Environment: FBG
+
+select EQ_201 "TopK Value", COUNT_204 "TopK Count", ISNULL_209 "TopK Null Sort" from (select *, EQ_201 is null ISNULL_209 from (select Q2.CAST_48 = to_timestamp_ltz('2025-03-30T00:00:00.000000000+00:00', 'YYYY-MM-DDTHH24:MI:SS.FF9TZH:TZM') EQ_201, count(1) COUNT_204 from FBG_SHEETZU."DEFAULT".NEW_SEGMENTS_DAILY_FORECAST full join (select OSB_SEGMENT, BUS_DATE::timestamp_ltz CAST_48 from FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.SBK_FORECASTING_DAILY_DS) Q2 on try_to_timestamp_ltz(NEW_SEGMENTS_DAILY_FORECAST."DATE") = Q2.CAST_48 and NEW_SEGMENTS_DAILY_FORECAST.USER_SEGMENT = Q2.OSB_SEGMENT left join FBG_SHEETZU."DEFAULT".NEW_SEGMENTS_DAILY_TARGETS Q4 on NEW_SEGMENTS_DAILY_FORECAST."DATE" = Q4.DATE_TARGET left join (select BUS_DATE_FC::timestamp_ltz CAST_100 from FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.SBK_FORECASTING_FAIRNESS_DS) Q6 on try_to_timestamp_ltz(NEW_SEGMENTS_DAILY_FORECAST."DATE") = Q6.CAST_100 left join (select BUS_DATE::timestamp_ltz CAST_140 from FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.SBK_FORECASTING_MTD_PL_DS) Q8 on try_to_timestamp_ltz(NEW_SEGMENTS_DAILY_FORECAST."DATE") = Q8.CAST_140 left join (select NEW_SEGMENTS_REVENUE_FLOW_THROUGH."DATE" from FBG_SHEETZU."DEFAULT".NEW_SEGMENTS_REVENUE_FLOW_THROUGH left join (select EHOLD_BUCKET, BUS_DATE::timestamp_ltz CAST_182 from FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.SBK_FORECASTING_REVENUE_FLOW_DS) Q11 on try_to_timestamp_ltz(NEW_SEGMENTS_REVENUE_FLOW_THROUGH."DATE") = Q11.CAST_182 and NEW_SEGMENTS_REVENUE_FLOW_THROUGH.HOLD_BUCKET = Q11.EHOLD_BUCKET) Q10 on NEW_SEGMENTS_DAILY_FORECAST."DATE" = Q10."DATE" group by EQ_201) Q1) Q14 order by ISNULL_209 desc, COUNT_204 desc, EQ_201 asc limit 4
+
+-- Sigma Σ {"sourceUrl":"https://app.sigmacomputing.com/bet-fanatics/data-model/NEW-Sportsbook-Forecasting-Report_Data-Model-1-34rdU89t8adkDkUiTTTdmE","kind":"adhoc","request-id":"g019d73f320e37afb8fbb281aa79eef28","user-id":"L3vHZYjsyKujxXKFJJVEoOSTC4m5s","email":"sai.manish@squadrondata.com"}

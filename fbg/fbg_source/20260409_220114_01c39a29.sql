@@ -1,0 +1,9 @@
+-- Query ID: 01c39a29-0212-6e7d-24dd-0703193e41d7
+-- Database: FBG_SOURCE
+-- Schema: unknown
+-- Warehouse: BI_SM_WH
+-- Executed: 2026-04-09T22:01:14.284000+00:00
+-- Elapsed: 4910ms
+-- Environment: FBG
+
+SELECT ROW_COUNT FROM "FBG_SOURCE".INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Custom SQL Query' AND TABLE_SCHEMA = 'OSB_SOURCE'

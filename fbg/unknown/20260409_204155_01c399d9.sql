@@ -1,0 +1,11 @@
+-- Query ID: 01c399d9-0212-6dbe-24dd-0703192be3c3
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: AE_SIGMA_PROD
+-- Executed: 2026-04-09T20:41:55.819000+00:00
+-- Elapsed: 520ms
+-- Environment: FBG
+
+with W1 as (select CASE_ID, RESOLUTION, iff(CASE_SUBTYPE <> 'Close Account', CASE_ID, null) IF_28, CASE_CREATED_EST::timestamp_ltz CAST_31, iff(iff(CASE_SUBTYPE <> 'Close Account', "7DCR", null) > 0, 1, 0) IF_48, case IS_AI_AGENT when 'False' then 'Chatbot' when 'True' then 'AI Agent' else null end SWITCH_56 from FBG_ANALYTICS.OPERATIONS.CHATBOT_CASES where date_trunc(day, CASE_CREATED_EST::timestamp_ltz) < to_timestamp_ltz('2026-04-09T00:00:00.000000000+00:00', 'YYYY-MM-DDTHH24:MI:SS.FF9TZH:TZM') and CASE_TYPE in ('Account', 'Withdrawal', 'Deposit', 'Responsible Gaming', 'Taxes', 'FanaticsONE', 'FanApp', 'FanCash', 'Casino Payout', 'Casino Credit', 'Casino Errors') and case IS_AI_AGENT when 'False' then 'Chatbot' when 'True' then 'AI Agent' else null end is not null and date_trunc(day, CASE_CREATED_EST::timestamp_ltz) >= to_timestamp_ltz('2026-04-02T00:00:00.000000000+00:00', 'YYYY-MM-DDTHH24:MI:SS.FF9TZH:TZM') and date_trunc(day, CASE_CREATED_EST::timestamp_ltz) <= to_timestamp_ltz('2026-04-09T23:59:59.999000000+00:00', 'YYYY-MM-DDTHH24:MI:SS.FF9TZH:TZM')) select SWITCH_56 "View", DATEFORMAT_61 "Date Level of Case Created EST", DIV_65 "7DCR % FINAL", COUNTDISTINCT_62 "Case Count" from (select Q3.SWITCH_56, to_char(date_trunc(day, Q3.CAST_31), 'Mon" "DD", "YY') DATEFORMAT_61, count(distinct Q3.CASE_ID) COUNTDISTINCT_62, sum(Q5.MAX_59) / nullif(count(distinct Q3.IF_28), 0) DIV_65 from (select * from W1 Q2 where RESOLUTION in ('Bot Resolved', 'Bot Created Email Case', 'Agent Resolved', 'Bot Completed', 'Bot Unresolved', 'Agent Completed', 'Full Unresolved', 'Abandoned')) Q3 left join (select max(IF_48) MAX_59, CASE_ID CASE_ID_60 from W1 Q4 group by CASE_ID) Q5 on equal_null(Q3.CASE_ID, Q5.CASE_ID_60) group by DATEFORMAT_61, Q3.SWITCH_56) Q7 order by SWITCH_56 asc, DATEFORMAT_61 asc limit 25001
+
+-- Sigma Σ {"sourceUrl":"https://app.sigmacomputing.com/bet-fanatics/workbook/Net-Zero-Health-Dashboard-3LBzlYO0NmPkyIBsM3GWZp?:displayNodeId=ptXP9CoeiN","kind":"adhoc","request-id":"g019d73fae27b742fab88857abefc7e82","user-id":"FtGGBxLcALxCM9j7UBd51zQIMS7qp","email":"neshat.mohammadi@betfanatics.com"}

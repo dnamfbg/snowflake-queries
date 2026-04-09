@@ -1,0 +1,11 @@
+-- Query ID: 01c399d3-0212-6b00-24dd-0703192a566f
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: AE_SIGMA_PROD
+-- Executed: 2026-04-09T20:35:18.218000+00:00
+-- Elapsed: 1349ms
+-- Environment: FBG
+
+with W1 as (select TOTAL_STAKE, PRODUCT_NAME PRODUCT_NAME_124, SECONDS_TO_WAGER SECONDS_TO_WAGER_125, SECONDS_TO_END_GAME_SESSION SECONDS_TO_END_GAME_SESSION_126, EVENT_DATE_ALK::timestamp_ltz CAST_128, PLATFORM PLATFORM_130 from FBG_ANALYTICS.CASINO.GAME_FLOW_REPORT where not CASINO_SUPER_VIP and EVENT_TIME_ALK >= to_timestamp_ntz('2026-03-09 00:00:00.000000000', 'YYYY-MM-DD HH24:MI:SS.FF9') and EVENT_TIME_ALK <= to_timestamp_ntz('2026-04-05 23:59:59.999000000', 'YYYY-MM-DD HH24:MI:SS.FF9')) select PLATFORM_131 "Choose Dimension", SUM_154 "sort-dzswlKiJ6l-0", CAST_129 "Switch Date_Granularity", MEDIAN_148 "Median", PERCENTILECONT_147 P75, MEDIAN_149 "Median (1)", PERCENTILECONT_150 "P75 (1)" from (select PERCENTILECONT_147, MEDIAN_148, MEDIAN_149, PERCENTILECONT_150, PLATFORM_131, CAST_129, SUM_154 from (select Q3.PERCENTILECONT_147, Q3.MEDIAN_148, Q3.MEDIAN_149, Q3.PERCENTILECONT_150, Q3.PLATFORM_131, Q3.CAST_129, Q5.SUM_154, Q5.PLATFORM_131 PLATFORM_132 from (select percentile_cont(0.75) within group (order by iff(PRODUCT_NAME_124 <> 'Web_app', SECONDS_TO_WAGER_125, null) asc) PERCENTILECONT_147, median(iff(PRODUCT_NAME_124 <> 'Web_app', SECONDS_TO_WAGER_125, null)) MEDIAN_148, median(iff(PRODUCT_NAME_124 <> 'Web_app', SECONDS_TO_END_GAME_SESSION_126, null)) MEDIAN_149, percentile_cont(0.75) within group (order by iff(PRODUCT_NAME_124 <> 'Web_app', SECONDS_TO_END_GAME_SESSION_126, null) asc) PERCENTILECONT_150, PLATFORM_130 PLATFORM_131, CAST_128 CAST_129 from W1 Q2 group by CAST_128, PLATFORM_130) Q3 left join (select sum(TOTAL_STAKE) SUM_154, PLATFORM_130 PLATFORM_131 from W1 Q4 group by PLATFORM_130) Q5 on equal_null(Q3.PLATFORM_131, Q5.PLATFORM_131) order by Q5.SUM_154 desc, Q3.PLATFORM_131 asc, Q3.CAST_129 asc limit 25001) Q7) Q8 order by SUM_154 desc, PLATFORM_131 asc, CAST_129 asc limit 25001
+
+-- Sigma Σ {"sourceUrl":"https://app.sigmacomputing.com/bet-fanatics/workbook/Game-Flow-Engagement-and-Performance-3jGALprgoaU751IBHhdfAo?:displayNodeId=SBxYPbXSN0","kind":"adhoc","request-id":"g019d73f4d297788f9a6a5022f831c570","user-id":"XFnSY8L83Bb6SJzIJ82MNBv1Jmmyp","email":"Jaime.Meek@betfanatics.com"}

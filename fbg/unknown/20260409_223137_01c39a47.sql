@@ -1,0 +1,11 @@
+-- Query ID: 01c39a47-0212-67a8-24dd-07031944c203
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: AE_SIGMA_PROD
+-- Executed: 2026-04-09T22:31:37.087000+00:00
+-- Elapsed: 3341ms
+-- Environment: FBG
+
+select ACCOUNT_ID "Account ID", AVG_174 "Sharp Prob PRE", AVG_161 "Sharp Prob Live", AVG_157 "CLV per Leg", AVG_159 "CLV Eligible", AVG_171 "Sharp Window PRE", AVG_176 "Sharp Window LIVE", AVG_158 "Vul Stake PRE", AVG_162 "Vul Stake LIVE", AVG_170 "Beat 60 seconds", AVG_175 "Weighted EV 60s", AVG_177 "Suspended 60s Win", AVG_173 "Rejected Win 60s", AVG_160 "Cash Out  EV 60s", AVG_165 "CashOut Lose 60s", SUM_167 "Overask Bets", DIV_183 "Overask Rejected", AVG_163 "TX Eligible Legs PRE", MAX_169 "TX Top Pre", MAX_168 "TX Joint Top Pre", MAX_179 "TX >= Median Pre", MAX_172 "TX < Median Pre", AVG_164 "TX Eligible Legs LIVE", MAX_178 "TX Top Live", MAX_180 "TX Joint Top Live", MAX_156 "TX >= Median Live", MAX_166 "TX < Median Live" from (select ACCOUNT_ID, max(ABOVE_MEDIAN_STAKE_LIVE) MAX_156, avg(CLV_PER_DOLLAR_LEGS) AVG_157, avg(STAKE_VUL_PCT_PM) AVG_158, avg(CLV_LEGS_STAKE_PCT) AVG_159, avg(CASHOUT_WEIGHTED_EV_60) AVG_160, avg(SHARP_PROB_LIVE) AVG_161, avg(STAKE_VUL_PCT_IP) AVG_162, avg(TX_LEGS_PRE) AVG_163, avg(TX_LEGS_LIVE) AVG_164, avg(CASHOUT_LOSE_60SECS_PCT) AVG_165, max(LESS_THAN_MEDIAN_STAKE_LIVE) MAX_166, sum(OVERASK_BETS) SUM_167, max(JOINT_TOP_PRICE_STAKE_PRE) MAX_168, max(TOP_PRICE_STAKE_PRE) MAX_169, avg(BEAT_60_PCT_FEATURE) AVG_170, avg(SHARP_WINDOW_PCT_SEAN_PM) AVG_171, max(LESS_THAN_MEDIAN_STAKE_PRE) MAX_172, avg(REJECTED_WIN_60SECS_PCT) AVG_173, avg(SHARP_PROB_PREGAME) AVG_174, avg(WEIGHTED_EV_60) AVG_175, avg(SHARP_WINDOW_PCT_SEAN_IP) AVG_176, avg(SUSPENDED_60_WIN_PCT) AVG_177, max(TOP_PRICE_STAKE_LIVE) MAX_178, max(ABOVE_MEDIAN_STAKE_PRE) MAX_179, max(JOINT_TOP_PRICE_STAKE_LIVE) MAX_180, sum(OVERASK_REJECTED) / nullif(SUM_167, 0) DIV_183 from FBG_ANALYTICS.TRADING.USER_AGGREGATED_REPORT_DATASOURCE where ACCOUNT_ID = 693468 group by ACCOUNT_ID) Q1 order by ACCOUNT_ID asc limit 10001
+
+-- Sigma Σ {"sourceUrl":"https://app.sigmacomputing.com/bet-fanatics/workbook/User-Aggregated-Report-2Ldbx1IVdxCU6guEN5hCqp?:displayNodeId=fl9tmekMOb","kind":"adhoc","request-id":"g019d745f4b087ea698a9d40f3452ef0f","user-id":"aeL4H6No1lRpjKKr7lyoS9BWG9kDl","email":"Zach.Hughes@betfanatics.com"}

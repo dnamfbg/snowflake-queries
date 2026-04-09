@@ -1,0 +1,41 @@
+-- Query ID: 01c39a3b-0212-6cb9-24dd-070319422e6b
+-- Database: FBG_ANALYTICS_DEV
+-- Schema: JORDAN_PLUCHAR
+-- Warehouse: BI_M_WH
+-- Executed: 2026-04-09T22:19:23.141000+00:00
+-- Elapsed: 535ms
+-- Environment: FBG
+
+WITH ct_data AS (
+    SELECT 
+        DATE,
+        (OSB_MARKET_ACCESS_FEE + OC_MARKET_ACCESS_FEE) AS MA_FEE_RAW,
+        (OSB_FINANCE_GGR + OC_FINANCE_GGR) AS TOTAL_GGR_RAW
+    FROM FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.CUSTOMER_VARIABLE_PROFIT
+    WHERE DATE BETWEEN '2025-03-01' AND '2025-03-31'
+      AND STATE = 'CT'
+),
+totals AS (
+    SELECT 
+        SUM(MA_FEE_RAW) AS TOTAL_MA_FEE,
+        SUM(TOTAL_GGR_RAW) AS TOTAL_GGR
+    FROM ct_data
+)
+SELECT 
+    -- Current values
+    TOTAL_MA_FEE / 1000000 AS CURRENT_MA_FEE_M,
+    TOTAL_GGR / 1000000 AS CURRENT_GGR_M,
+    (TOTAL_MA_FEE / NULLIF(TOTAL_GGR, 0)) * 100 AS CURRENT_MA_RATE_PCT,
+    
+    -- Marketing deduction (10% of GGR)
+    TOTAL_GGR * 0.10 / 1000000 AS MARKETING_DEDUCTION_M,
+    
+    -- Adjusted GGR (after 10% marketing deduction)
+    TOTAL_GGR * 0.90 / 1000000 AS ADJUSTED_GGR_M,
+    
+    -- Recalculated MA fee using same rate on adjusted GGR
+    (TOTAL_MA_FEE / NULLIF(TOTAL_GGR, 0)) * (TOTAL_GGR * 0.90) / 1000000 AS ADJUSTED_MA_FEE_M,
+    
+    -- Difference (savings)
+    (TOTAL_MA_FEE - (TOTAL_MA_FEE / NULLIF(TOTAL_GGR, 0)) * (TOTAL_GGR * 0.90)) / 1000000 AS MA_FEE_REDUCTION_M
+FROM totals

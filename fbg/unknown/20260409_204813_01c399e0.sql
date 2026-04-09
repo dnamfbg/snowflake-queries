@@ -1,0 +1,11 @@
+-- Query ID: 01c399e0-0212-644a-24dd-0703192cdcbf
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: AE_SIGMA_PROD
+-- Executed: 2026-04-09T20:48:13.457000+00:00
+-- Elapsed: 67395ms
+-- Environment: FBG
+
+with W1 as (select SEL, sum(ORIGINAL_BET_STAKE_NEXT_TO_RUN) SUM_101, sum(TOTAL_LAST_TO_RUN_LIABILITY2) SUM_102, sum(PARLAY_RUNNING_UP_DOLLARS_NEXT_TO_RUN) SUM_103, equal_null(min(ORIGINAL_BET_STAKE_LAST_TO_RUN + SINGLES_HANDLE), max(ORIGINAL_BET_STAKE_LAST_TO_RUN + SINGLES_HANDLE)) NULL_EQ_104, max(ORIGINAL_BET_STAKE_LAST_TO_RUN + SINGLES_HANDLE) MAX_105 from FBG_ANALYTICS.TRADING.FIELDBOOK_LIABILITIES where EVENT_TIME >= to_timestamp_ntz('2026-04-01 00:00:00.000000000', 'YYYY-MM-DD HH24:MI:SS.FF9') and EVENT_TIME <= to_timestamp_ntz('2026-05-31 23:59:59.999000000', 'YYYY-MM-DD HH24:MI:SS.FF9') group by SEL) select MIN_118 "jZ2nhAWlCp-min", MAX_119 "jZ2nhAWlCp-max", MIN_120 "vjW7t034qu-min", MAX_121 "vjW7t034qu-max", MIN_122 "8K-LkJAX__-min", MAX_123 "8K-LkJAX__-max", MIN_124 "X9iJhOf_DJ-min", MAX_125 "X9iJhOf_DJ-max", SEL "Sel", IF_106 "Bet Handle - Last to Run.", NULL_EQ_104, SUM_102 "Total Last to Run Liability 2", SUM_101 "Bet Handle - Next to Run", SUM_103 "Accumulated Handle - Next to Run", SUM_104 "sort-inode-2pJYMEH4ESHUAqK48E61mz/SEL-0" from (select Q3.SEL, Q3.SUM_101, Q3.SUM_102, Q3.SUM_103, Q3.NULL_EQ_104, Q3.IF_106, Q3.SUM_104, Q5.MIN_118, Q5.MAX_119, Q5.MIN_120, Q5.MAX_121, Q5.MIN_122, Q5.MAX_123, Q5.MIN_124, Q5.MAX_125 from (select SEL, SUM_101, SUM_102, SUM_103, NULL_EQ_104, iff(NULL_EQ_104, MAX_105, null) IF_106, SUM_102 SUM_104 from W1 Q2 order by SUM_104 asc nulls last, SEL asc limit 10001) Q3 cross join (select min(SUM_102) MIN_118, max(SUM_102) MAX_119, min(SUM_103) MIN_120, max(SUM_103) MAX_121, min(SUM_101) MIN_122, max(SUM_101) MAX_123, min(iff(NULL_EQ_104, MAX_105, null)) MIN_124, max(iff(NULL_EQ_104, MAX_105, null)) MAX_125 from W1 Q4) Q5) Q7 order by SUM_104 asc nulls last, SEL asc limit 10001
+
+-- Sigma Σ {"sourceUrl":"https://app.sigmacomputing.com/bet-fanatics/workbook/Business-Mix-Dashboard-5fP8YLw5lzQDrgIeBMqCzm?:displayNodeId=eo9VzZCD8j","kind":"adhoc","request-id":"g019d7400a6557669992edd87c9426ef6","user-id":"ZF390mND5StXOsyQkAEUqG8havXDi","email":"andy.morrissey@betfanatics.com"}

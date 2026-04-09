@@ -1,0 +1,9 @@
+-- Query ID: 01c399f0-0212-67a8-24dd-0703193079cf
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: TRADING_XL_WH
+-- Executed: 2026-04-09T21:04:14.409000+00:00
+-- Elapsed: 977ms
+-- Environment: FBG
+
+SELECT DISTINCT SOURCE FROM FBG_ANALYTICS.PRODUCT_AND_CUSTOMER.BETS_BY_PAGE ORDER BY SOURCE

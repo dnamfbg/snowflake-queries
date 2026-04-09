@@ -1,0 +1,11 @@
+-- Query ID: 01c399d9-0212-6e7d-24dd-0703192bca8f
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: AE_SIGMA_PROD
+-- Executed: 2026-04-09T20:41:58.858000+00:00
+-- Elapsed: 752ms
+-- Environment: FBG
+
+select CASE_TYPE "Case Type", DIV_66 "Bot Resolution %", DIV_67 "Containment %", DIV_65 "7DCR %", DIV_68 "Abandonment %", COUNTDISTINCT_59 "CountDistinct of Case Id", MEDIAN_58 "Median of Bot Handle Time" from (select CASE_TYPE, median(abs(datediff(second, coalesce(least(LAST_BOT_MESSAGE_TIME::timestamp_ltz, FIRST_AGENT_MESSAGE_TIME::timestamp_ltz), LAST_BOT_MESSAGE_TIME::timestamp_ltz), FIRST_MESSAGE_TIME::timestamp_ltz)) / 60) MEDIAN_58, count(distinct CASE_ID) COUNTDISTINCT_59, sum("7DCR") / nullif(COUNTDISTINCT_59, 0) DIV_65, sum(iff(RESOLUTION = 'Bot Resolved', 1, 0)) / nullif(COUNTDISTINCT_59, 0) DIV_66, sum(CONTAINMENT) / nullif(COUNTDISTINCT_59, 0) DIV_67, sum(iff(RESOLUTION = 'Abandoned', 1, 0)) / nullif(COUNTDISTINCT_59, 0) DIV_68 from FBG_ANALYTICS.OPERATIONS.CHATBOT_CASES where date_trunc(day, CASE_CREATED_EST::timestamp_ltz) < to_timestamp_ltz('2026-04-09T00:00:00.000000000+00:00', 'YYYY-MM-DDTHH24:MI:SS.FF9TZH:TZM') and CASE_TYPE in ('Account', 'Withdrawal', 'Deposit', 'Responsible Gaming', 'Taxes', 'FanaticsONE', 'FanApp', 'FanCash', 'Casino Payout', 'Casino Credit', 'Casino Errors') and RESOLUTION in ('Bot Resolved', 'Bot Created Email Case', 'Agent Resolved', 'Bot Completed', 'Bot Unresolved', 'Agent Completed', 'Full Unresolved', 'Abandoned') and case IS_AI_AGENT when 'False' then 'Chatbot' when 'True' then 'AI Agent' else null end is not null and date_trunc(day, CASE_CREATED_EST::timestamp_ltz) >= to_timestamp_ltz('2026-04-02T00:00:00.000000000+00:00', 'YYYY-MM-DDTHH24:MI:SS.FF9TZH:TZM') and date_trunc(day, CASE_CREATED_EST::timestamp_ltz) <= to_timestamp_ltz('2026-04-09T23:59:59.999000000+00:00', 'YYYY-MM-DDTHH24:MI:SS.FF9TZH:TZM') group by CASE_TYPE) Q1 order by CASE_TYPE asc nulls first limit 10001
+
+-- Sigma Σ {"sourceUrl":"https://app.sigmacomputing.com/bet-fanatics/workbook/Net-Zero-Health-Dashboard-3LBzlYO0NmPkyIBsM3GWZp?:displayNodeId=YUvz2SDdsJ","kind":"adhoc","request-id":"g019d73faf05d7da4872c0d088ebc3bb8","user-id":"FtGGBxLcALxCM9j7UBd51zQIMS7qp","email":"neshat.mohammadi@betfanatics.com"}

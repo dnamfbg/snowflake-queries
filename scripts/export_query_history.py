@@ -34,11 +34,11 @@ SELECT
     START_TIME,
     EXECUTION_STATUS,
     TOTAL_ELAPSED_TIME
-FROM SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY
-WHERE USER_NAME = CURRENT_USER()
-  AND EXECUTION_STATUS = 'SUCCESS'
+FROM TABLE(INFORMATION_SCHEMA.QUERY_HISTORY(
+    RESULT_LIMIT => 10000
+))
+WHERE EXECUTION_STATUS = 'SUCCESS'
   AND QUERY_TYPE IN ('SELECT', 'CREATE_TABLE_AS_SELECT', 'INSERT', 'MERGE', 'UPDATE', 'DELETE', 'CREATE_TABLE', 'CREATE_VIEW')
-  AND START_TIME >= DATEADD('month', -12, CURRENT_TIMESTAMP())
 ORDER BY START_TIME DESC
 """
 
@@ -93,10 +93,18 @@ def export_environment(env_name, config):
     cursor = conn.cursor()
 
     try:
+        # Need a database context for INFORMATION_SCHEMA
+        cursor.execute("SHOW DATABASES")
+        dbs = cursor.fetchall()
+        if dbs:
+            first_db = dbs[0][1]  # name column
+            cursor.execute(f'USE DATABASE "{first_db}"')
+            print(f"Using database: {first_db}")
+
         print("Querying history (this may take a moment)...")
         cursor.execute(QUERY_HISTORY_SQL)
         rows = cursor.fetchall()
-        print(f"Found {len(rows)} successful queries in the last 12 months.")
+        print(f"Found {len(rows)} successful queries.")
     except Exception as e:
         print(f"Error querying history: {e}")
         conn.close()

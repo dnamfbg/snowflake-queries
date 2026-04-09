@@ -1,0 +1,9 @@
+-- Query ID: 01c399fd-0212-6b00-24dd-07031934235b
+-- Database: FBG_ANALYTICS_DEV
+-- Schema: MATT_CHERNIS
+-- Warehouse: BI_XSM_WH
+-- Executed: 2026-04-09T21:17:46.001000+00:00
+-- Elapsed: 264ms
+-- Environment: FBG
+
+select * from FBG_ANALYTICS.OPERATIONS.CONCIERGE_DAILY_CONTACT_METRICS

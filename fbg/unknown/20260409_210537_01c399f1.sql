@@ -1,0 +1,9 @@
+-- Query ID: 01c399f1-0212-67a9-24dd-07031930c93b
+-- Database: unknown
+-- Schema: unknown
+-- Warehouse: TRADING_XL_WH
+-- Executed: 2026-04-09T21:05:37.363000+00:00
+-- Elapsed: 86ms
+-- Environment: FBG
+
+SELECT DISTINCT WAGER_SOURCE FROM FBG_STAGE.FBG_STAGE.ONLINE_SPORTSBOOK_WAGERS LIMIT 30
